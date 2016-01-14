@@ -1,0 +1,17 @@
+{
+  "name": "retainer_report",
+  "main": "main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "jquery-tmpl": "BorisMoore/jquery-tmpl",
+    "jquery.tablesort": "UziTech/jquery.tablesort"
+  }
+}

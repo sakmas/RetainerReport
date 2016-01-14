@@ -1,0 +1,32 @@
+{{if retainers == null}}
+  <p>${message}</p>
+{{else}}
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="sortable">リテイナー名</th>
+      <th class="sortable">アイテム名</th>
+      <th class="sortable" data-sorttype="number">取引価格</th>
+      <th class="sortable">購入者名</th>
+      <th class="sortable" data-sorttype="date">取引日時</th>
+    </tr>
+    </thead>
+    <tbody>
+      {{if retainers.length == 0}}
+        <tr>
+          <td colspan="5">販売履歴データがありません。</td>
+        </tr>
+      {{else}}
+        {{each retainers}}
+          <tr>
+            <td>${this.name}</td>
+            <td>${this.item}</td>
+            <td>${this.price}</td>
+            <td>${this.buyer}</td>
+            <td>${this.saleDate}</td>
+          </tr>
+        {{/each}}
+      {{/if}}
+    </tbody>
+  </table>
+{{/if}}
