@@ -9,9 +9,9 @@ module.exports = (function() {
   }
 
   function setMessage(name) {
-    messageTarget.text(name)
+    messageTarget.text(name);
   }
-      
+
   return {
     setup: function(count) {
       barTarget = $('#progress-bar');
@@ -26,5 +26,5 @@ module.exports = (function() {
       setProgress(100);
       setMessage('処理しています...');
     }
-  }
+  };
 })();
