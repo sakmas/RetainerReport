@@ -1,14 +1,14 @@
 $(function() {
-  function isPageEnabled() {
-    if (location.hostname !== 'jp.finalfantasyxiv.com') {
-      alert('このスクリプトは「FINAL FANTASY XIV, The Lodestone」ページにのみ対応しています。');
-      return false;
-    }
-    if ($('#player_info').size() === 0) {
-      alert('このスクリプトの実行にはログインが必要です。');
-      return false;
-    }
-    return true;
+  function isLodestone() {
+    return location.hostname === 'jp.finalfantasyxiv.com';
+  }
+
+  function isSP() {
+    return $('#pageTop').size() !== 0;
+  }
+
+  function isUserLoggedIn() {
+    return $('#player_info').size() !== 0;
   }
 
   function showModal(data) {
@@ -34,7 +34,20 @@ $(function() {
   }
 
   function exec() {
-    if (!isPageEnabled()) { return; }
+    if (!isLodestone()) {
+      alert('このスクリプトは「FINAL FANTASY XIV, The Lodestone」ページにのみ対応しています。');
+      return;
+    }
+
+    if (isSP()) {
+      alert('このスクリプトはスマートフォンページに対応していません。');
+      return;
+    }
+
+    if (!isUserLoggedIn()) {
+      alert('このスクリプトの実行にはログインが必要です。');
+      return;
+    }
 
     require('bootstrap.min');
     require('bootstrap.min.css');
