@@ -12,6 +12,10 @@
 
     javascript:(function(d){var s=d.createElement('script');s.src='https://sakmas.github.io/RetainerReport/dist/main.bundle.js';s.charset='utf-8';d.body.appendChild(s);})(document);
 
+このようにブックマークバーに追加すると便利です。
+
+![RetainerReport](https://sakmas.github.io/RetainerReport/images/screen1.png)
+
 * Lodestone にログインしている必要があります。
 * Lodestone サイト内(URLが jp.finalfantasyxiv.com ではじまるページ)であればどのページからでも実行できます。
 * スマートフォン版には対応していませんが、スマートフォンにてPC版ページを表示することで使用できます。
