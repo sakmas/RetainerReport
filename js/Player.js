@@ -61,9 +61,9 @@ module.exports = (function() {
   }
 
   return function() {
-    var _info = $('#player_info').find('a');
+    var _info = $('.head-my-character__name');
     this.name = _info.text().trim();
-    this.id = _info.attr('href').split('/')[3];
+    this.id = $('.my-menu__colmun').find('[href^="/lodestone/character/"]').attr('href').split('/')[3]
     this.retainerUri = ['/lodestone/character/', this.id, '/retainer/'].join('');
     this.callRetainers = _callRetainers;
   };

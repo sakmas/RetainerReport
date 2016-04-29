@@ -8,7 +8,7 @@ $(function() {
   }
 
   function isUserLoggedIn() {
-    return $('#player_info').size() !== 0;
+    return $('.head-my-character').size() !== 0
   }
 
   function showModal(data) {
