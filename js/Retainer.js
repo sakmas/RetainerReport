@@ -24,7 +24,7 @@ module.exports = (function() {
     this._promise = d.promise();
     this.summarizeReport = _summarizeReport;
     $.ajax({
-      url: [retainerUri, id, '/market'].join(''),
+      url: [retainerUri, id].join(''),
       context: this
     }).then(function(data) {
       this.name = $(data).find('.retainer--name').children('p').text().trim();
