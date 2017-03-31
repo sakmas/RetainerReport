@@ -1,7 +1,7 @@
 module.exports = (function() {
   function _createReport($data) {
     var Report = require('Report');
-    return $data.find('.table_retainer_item').last().find('tbody > tr').map(function(_, record) {
+    return $data.find('div[name="tab__market-logs"] .item-list--footer .item-list__list').map(function(_, record) {
       return new Report($(record));
     });
   }
@@ -27,10 +27,10 @@ module.exports = (function() {
       url: [retainerUri, id].join(''),
       context: this
     }).then(function(data) {
-      this.name = $(data).find('.retainer--name').children('p').text().trim();
-      this.level = $(data).find('#retainer--class_info > .level').text().split(' ')[1];
+      this.name = $(data).find('.retainer__data--name').text().trim();
+      this.level = $(data).find('.retainer__data--level').text().split(' ')[1];
       this.saleReports = _createReport($(data));
-      this.lastUpdate = eval($(data).find('.ymd script').text().split(' = ')[1]);
+      this.lastUpdate = eval($(data).find('div[name="tab__market-logs"] .heading__icon__update').text().split(' = ')[1]);
       d.resolve(this);
     });
   };

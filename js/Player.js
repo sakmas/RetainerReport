@@ -1,9 +1,7 @@
 module.exports = (function() {
   function _getRetainerIdList(retainerPage) {
-    return $(retainerPage).find('.retainer--select').find('option').filter(function(_, option) {
-      return $(option).val() !== '';
-    }).map(function(_, option) {
-      return $(option).val().split('/')[5];
+    return $(retainerPage).find('.parts__switch__link').map(function(_, link) {
+      return $(link).attr('href').split('/')[5];
     }).get();
   }
 
@@ -63,7 +61,7 @@ module.exports = (function() {
   return function() {
     var _info = $('.head-my-character__name');
     this.name = _info.text().trim();
-    this.id = $('.my-menu__colmun').find('[href^="/lodestone/character/"]').attr('href').split('/')[3]
+    this.id = $('.my-menu__colmun').find('[href^="/lodestone/character/"]').attr('href').split('/')[3];
     this.retainerUri = ['/lodestone/character/', this.id, '/retainer/'].join('');
     this.callRetainers = _callRetainers;
   };
