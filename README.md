@@ -2,6 +2,8 @@
 
 [FINAL FANTASY XIV The Lodestone](http://jp.finalfantasyxiv.com/lodestone/) サイトで公開されているリテイナー達の販売履歴を一覧化して表示する事ができるツールです。
 
+![RetainerReport](https://sakmas.github.io/RetainerReport/images/screen2.png)
+
 ## 説明
 
 リテイナー毎に分かれているアイテム販売履歴ページからデータを収集、一覧にして表示します。
